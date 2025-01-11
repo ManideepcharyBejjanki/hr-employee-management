@@ -7,24 +7,24 @@
             placeholder="Search Employee" 
             class="px-3 py-1 border rounded-lg w-40"
           >
-      <div
-        class="w-30 h-10 flex items-center justify-between bg-white text-black px-5 py-2 rounded hover:bg-purple-500"
+          <div
+        class="w-30 h-10 flex items-center justify-between px-5 py-2 rounded hover:bg-purple-700 hover:text-white border border-black"
       >
         <UploadIcon class="w-5 h-5" />
         <button class="px-2">Export</button>
       </div>
     </div>
 
-    <table class="w-full text-left text-gray-600">
+    <table class="w-full text-left text-black">
       <thead>
-        <tr class="border-b">
-          <th class="py-2">Employee ID</th>
-          <th class="py-2">Employee Name</th>
-          <th class="py-2">Email</th>
-          <th class="py-2">Role</th>
-          <th class="py-2">Departments</th>
-          <th class="py-2">Status</th>
-          <th class="py-2">Action</th>
+        <tr class="border-b text-gray-400">
+          <th class="py-2 font-semibold">Employee ID</th>
+          <th class="py-2 font-semibold">Employee Name</th>
+          <th class="py-2 font-semibold">Email</th>
+          <th class="py-2 font-semibold">Role</th>
+          <th class="py-2 font-semibold">Departments</th>
+          <th class="py-2 font-semibold">Status</th>
+          <th class="py-2 font-semibold">Action</th>
         </tr>
       </thead>
       <tbody>
@@ -33,17 +33,22 @@
           :key="index"
           class="border-b"
         >
-          <td class="py-2">{{ employee.id }}</td>
-          <td class="py-2">{{ employee.name }}</td>
-          <td class="py-2">{{ employee.email }}</td>
-          <td class="py-2">{{ employee.role }}</td>
-          <td class="py-2">{{ employee.department }}</td>
+          <td class="py-2 font-semibold">{{ employee.id }}</td>
+          <td class="py-2 font-semibold">{{ employee.name }}</td>
+          <td class="py-2 font-semibold">{{ employee.email }}</td>
+          <td class="py-2 font-semibold">{{ employee.role }}</td>
+          <td class="py-2 font-semibold">
+            <span class="px-2 py-1 border rounded border-gray-400">
+              {{ employee.department }}
+            </span>
+          </td>
           <td class="py-2">
             <span
+              class="px-2 py-1 border rounded"
               :class="
                 employee.status === 'Full-time'
-                  ? 'text-green-600'
-                  : 'text-yellow-600'
+                  ? 'text-green-600 border-green-600'
+                  : 'text-orange-600 border-orange-600'
               "
             >
               {{ employee.status }}
